@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>데이터 컨트롤</title>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+  </head>
+  <body>
+    <script>
+      const f1 = d3.scalePoint().range([0, 100]).domain([10, 20, 30, 40]);
+      console.log(f1(20));
+
+      const f2 = d3.scalePoint().range([0, 100]).domain(['a', 'b', 'c', 'd']);
+      console.log(f2('c'));
+
+      const f3 = d3
+        .scalePoint()
+        .range([0, 100])
+        .domain(['a', 'b', 'c', 'd'])
+        .padding(0.3);
+      console.log(f3('a'));
+    </script>
+  </body>
+</html>

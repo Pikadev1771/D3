@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>데이터 컨트롤</title>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+  </head>
+  <body>
+    <script>
+      const f1 = d3
+        .scaleBand()
+        .domain(['one', 'two', 'three', 'four'])
+        .range([0, 100]);
+
+      console.log(f1('one'));
+      console.log(f1('two'));
+      console.log(f1('three'));
+      console.log(f1('four'));
+    </script>
+  </body>
+</html>
