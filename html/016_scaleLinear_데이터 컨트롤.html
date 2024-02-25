@@ -9,11 +9,11 @@
   <body>
     <script>
       const f1 = d3.scaleLinear().range([0, 100]).domain([0, 500]);
-      console.log(f1(250));
-      console.log(f1(0));
-      console.log(f1(500));
-      console.log(f1(100));
-      console.log(f1(1000));
+      console.log(f1(250)); // 50
+      console.log(f1(0)); // 0
+      console.log(f1(500)); // 100
+      console.log(f1(100)); // 25
+      console.log(f1(1000)); //250
 
       crayons = d3
         .scaleLinear()
