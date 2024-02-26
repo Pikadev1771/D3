@@ -63,21 +63,23 @@
 
           const bars = graph.selectAll('rect').data(data);
 
-          // bars
-          //   .enter()
-          //   .append('rect')
-          //   .attr('height', (d) => graphHeight - y(d.확진자수)) // 막대 그래프의 높이 (graphHeight에서 다시 빼줘야 함)
-          //   .attr('width', x.bandwidth)
-          //   .attr('fill', 'hotpink')
-          //   .attr('x', (d) => x(d.지역이름))
-          //   .attr('y', (d) => y(d.확진자수));
+          bars
+            .enter()
+            .append('rect')
+            .attr('height', (d) => graphHeight - y(d.확진자수)) // 막대 그래프의 높이 (graphHeight에서 다시 빼줘야 함)
+            .attr('width', x.bandwidth)
+            .attr('fill', 'hotpink')
+            .attr('x', (d) => x(d.지역이름))
+            .attr('y', (d) => y(d.확진자수));
 
+          // 라인 그래프
           const line = d3
             .line()
             .x((d) => x(d.지역이름) + 15)
             .y((d) => y(d.확진자수))
             .curve(d3.curveBasis);
 
+          // 라인 그래프 - bars를 잇는 path를 활용
           bars
             .enter()
             .append('path')

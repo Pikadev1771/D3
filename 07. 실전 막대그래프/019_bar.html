@@ -72,20 +72,6 @@
             .attr('x', (d) => x(d.지역이름))
             .attr('y', (d) => y(d.확진자수));
 
-          const line = d3
-            .line()
-            .x((d) => x(d.지역이름) + 15)
-            .y((d) => y(d.확진자수))
-            .curve(d3.curveBasis);
-
-          bars
-            .enter()
-            .append('path')
-            .attr('fill', 'none') // path로 생성되는 채우기 X
-            .attr('stroke', 'blue')
-            .attr('stroke-width', '2px')
-            .attr('d', line(data));
-
           bars
             .enter()
             .append('text')
